@@ -12,30 +12,30 @@ const input = "1348 1621 1500 1818 1266 1449 1880 1416 1862 1665 1588 1704 1922 
 // }
 
 // Part 1 Optimized
-const findSum = (arr) => {
-  let nums = {};
-  arr.forEach(num => {
-    if (!nums[num]) {
-      nums[2020 - num] = num;
-    } else {
-      console.log({num1: nums[num], num2: num, product: num * nums[num]})
-    }
-  })
-}
+// const findSum = (arr) => {
+//   let nums = {};
+//   arr.forEach(num => {
+//     if (!nums[num]) {
+//       nums[2020 - num] = num;
+//     } else {
+//       console.log({num1: nums[num], num2: num, product: num * nums[num]})
+//     }
+//   })
+// }
 
-findSum(input);
+// findSum(input);
 
 
 // Part 2 Brute Force
-// for (let i = 0; i < input.length; i++) {
-//   let num1 = input[i];
-//   for (let j = i + 1; j < input.length; j++) {
-//     let num2 = input[j];
-//     for (let k = j + 1; k < input.length; k++) {
-//       let num3 = input[k];
-//       if (num1 + num2 + num3 === 2020) {
-//         console.log({num1: num1, num2: num2, num3: num3, output: (num1 * num2 * num3)})
-//       }
-//     }
-//   }
-// }
+for (let i = 0; i < input.length; i++) {
+  let num1 = input[i];
+  for (let j = i + 1; j < input.length; j++) {
+    let num2 = input[j];
+    for (let k = j + 1; k < input.length; k++) {
+      let num3 = input[k];
+      if (num1 + num2 + num3 === 2020) {
+        console.log({num1: num1, num2: num2, num3: num3, output: (num1 * num2 * num3)})
+      }
+    }
+  }
+}
