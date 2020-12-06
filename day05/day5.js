@@ -34,11 +34,11 @@ const seatFinder = (boardPasses) => {
       highest = id;
     }
   })
-  console.log(highest);
+  console.log({highestId: highest});
   return highest;
 };
 
-// seatFinder(input);
+seatFinder(input);
 
 // Part 2
 const seatFinder2 = (boardPasses) => {
@@ -65,6 +65,7 @@ const seatFinder2 = (boardPasses) => {
         left = left + Math.ceil((right - left) / 2);
       }
     })
+
     ids.push((max * 8) + right);
   })
   let sorted = ids.sort((el1, el2) => el1 - el2);
@@ -76,7 +77,7 @@ const seatFinder2 = (boardPasses) => {
       continue;
     } else {
       mySeat = seat + 1;
-      console.log({mySeatID: mySeat});
+      console.log({mySeatId: mySeat});
       return mySeat
     }
   }
