@@ -4,7 +4,6 @@ const numbers = text.split('\n').map(Number);
 
 const ruleBreaker = (numbers) => {
   let found = false;
-  let badNum;
   while(!found) {
     for (let i = 25; i < numbers.length; i++) {
       let preabmble = numbers.slice((i - 25), i);
@@ -16,8 +15,7 @@ const ruleBreaker = (numbers) => {
           break;
         } 
         if (j === preabmble.length - 1){
-          badNum = checkNum;
-          return [badNum, i];
+          return checkNum;
         }
         numbers.shift();
       }
@@ -25,7 +23,7 @@ const ruleBreaker = (numbers) => {
   }
 };
 
-// console.log(ruleBreaker(numbers));
+console.log(ruleBreaker(numbers));
 
 const ruleBreaker2 = (numbers) => {
   let total = 104054607;
